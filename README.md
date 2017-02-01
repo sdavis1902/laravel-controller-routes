@@ -2,26 +2,10 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
 PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
-
 
 ## Install
 
@@ -31,12 +15,40 @@ Via Composer
 $ composer require sdavis1902/laravel-controller-routes
 ```
 
-## Usage
+Once installed add the service provider and alias
 
 ``` php
-$skeleton = new sdavis1902\LaravelControllerRoutes();
-echo $skeleton->echoPhrase('Hello, League!');
+'providers' => [
+    ...
+    sdavis1902\LaravelControllerRoutes\LaravelControllerRoutesServiceProvider::class,
+],
 ```
+
+``` php
+'aliases' => [
+    ...
+	'MoreRoute' => sdavis1902\LaravelControllerRoutes\Facades\MoreRoute::class,
+],
+```
+
+## Usage
+
+In your routes file
+
+``` php
+MoreRoute::controller('/test', 'TestController');
+```
+
+Your Controller
+
+``` php
+class TestController extends Controller {
+    public function getFrank(){
+        return 'woo';
+    }
+}
+```
+You can now go to yourdomain.comm/test/frank and it should say "woo"
 
 ## Change log
 
