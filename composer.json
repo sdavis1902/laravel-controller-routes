@@ -1,7 +1,7 @@
 {
     "name": "sdavis1902/LaravelControllerRoutes",
     "type": "library",
-    "description": ":package_description",
+    "description": "In Laravel 5.3 Route::controller was removed.  This package replaces that functionality if you still want to use it.",
     "keywords": [
         "sdavis1902",
         "LaravelControllerRoutes"
@@ -10,9 +10,9 @@
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Scott Davis",
+            "email": "s.davis1902@gmail.com",
+            "homepage": "https://github.com/sdavis1902",
             "role": "Developer"
         }
     ],
