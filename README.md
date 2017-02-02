@@ -4,8 +4,7 @@
 [![Software License][ico-license]](LICENSE.md)
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+As of Laravel 5.3, Route::controller was removed.  This provides the same functionality.
 
 ## Install
 
@@ -50,23 +49,9 @@ class TestController extends Controller {
 ```
 You can now go to yourdomain.comm/test/frank and it should say "woo"
 
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
-
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
-
-## Security
-
-If you discover any security related issues, please email s.davis1902@gmail.com instead of using the issue tracker.
 
 ## Credits
 
