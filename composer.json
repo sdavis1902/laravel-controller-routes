@@ -1,5 +1,5 @@
 {
-    "name": "sdavis1902/LaravelControllerRoutes",
+    "name": "sdavis1902/laravel-controller-routes",
     "type": "library",
     "description": "In Laravel 5.3 Route::controller was removed.  This package replaces that functionality if you still want to use it.",
     "keywords": [
