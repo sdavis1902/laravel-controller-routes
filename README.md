@@ -2,7 +2,6 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Total Downloads][ico-downloads]][link-downloads]
 
 As of Laravel 5.3, Route::controller was removed.  This provides the same functionality.
 
