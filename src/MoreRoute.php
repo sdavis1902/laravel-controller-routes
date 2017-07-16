@@ -39,7 +39,7 @@ class MoreRoute
 
             $params_count = count($params);
             if($params_count < $required_num || $params_count > $num){
-                abort(404);
+                //abort(404); // currently can't handle method injection, so commented out for now
             }
 
             return call_user_func_array([$class, $function], $params);
