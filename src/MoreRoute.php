@@ -33,13 +33,24 @@ class MoreRoute
             }
 
             // now check params are correct
-            $method = new ReflectionMethod('App\Http\Controllers\\' . $controller, $function);
-            $required_num = $method->getNumberOfRequiredParameters();
-            $num = $method->getNumberOfParameters();
+            $rmethod = new ReflectionMethod('App\Http\Controllers\\' . $controller, $function);
+            $required_num = $rmethod->getNumberOfRequiredParameters();
+            $num = $rmethod->getNumberOfParameters();
+
+            $parameters = [];
+			foreach ($rmethod->getParameters() as $key => $parameter) {
+				$rclass = $parameter->getClass();
+				if ($rclass) {
+					$parameters[$key] = \App::make($rclass->name);
+                }else{
+                    break;
+                }
+            }
+            $params = array_merge($parameters, $params);
 
             $params_count = count($params);
             if($params_count < $required_num || $params_count > $num){
-                //abort(404); // currently can't handle method injection, so commented out for now
+                abort(404);
             }
 
             return call_user_func_array([$class, $function], $params);
