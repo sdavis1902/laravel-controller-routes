@@ -42,6 +42,14 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+		"laravel": {
+            "providers": [
+                "sdavis1902\\LaravelControllerRoutes\\LaravelControllerRoutesServiceProvider"
+            ],
+            "aliases": {
+                "MoreRoute": "sdavis1902\\LaravelControllerRoutes\\Facades\\MoreRoute"
+            }
         }
     },
     "config": {

@@ -13,7 +13,7 @@ Via Composer
 $ composer require sdavis1902/laravel-controller-routes
 ```
 
-Once installed add the service provider and alias
+Once installed add the service provider and alias ( not required for 5.5 )
 
 ``` php
 'providers' => [
