@@ -15,6 +15,18 @@ class MoreRoute
         $uri = preg_replace('/\/$/', '', $uri); // clear any trailing slashes
 
         Route::any($uri . '/{rest?}', function() use ($uri, $controller){
+			$segments = Request::segments();
+            if($segments[0] !== $uri){
+                // must be using prefix, we need to adjust our uri
+                $newuri = '';
+                foreach($segments as $segment){
+                    $newuri.= "$segment/";
+                    if($segment == $uri) break;
+                }
+
+                $uri = preg_replace('/\/$/', '', $newuri);
+            }
+
             $uri_segment_count = count(explode('/', $uri));
             $params = array_slice(Request::segments(), $uri_segment_count);
             $method = strtolower(Request::method());
